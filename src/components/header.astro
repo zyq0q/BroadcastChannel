@@ -101,12 +101,6 @@ const staticProxy = getEnv(import.meta.env, Astro, 'STATIC_PROXY') ?? '/static/'
   </div>
 </div>
 
-{
-  channel?.descriptionHTML && channel?.descriptionHTML.length > 0 && (
-    <div class="text-box" id="site-intro" set:html={channel?.descriptionHTML} />
-  )
-}
-
 <style>
   #site-intro {
     color: var(--secondary-color);
