@@ -25,17 +25,17 @@ const staticProxy = getEnv(import.meta.env, Astro, 'STATIC_PROXY') ?? '/static/'
 ---
 
 <div id="header">
-  <a href={SITE_URL} title={channel?.title}>
+  <a href={SITE_URL} title="羊毛吧 全网羊毛一起薅">
     <img
-      src={channel?.avatar?.startsWith('http') ? staticProxy + channel?.avatar : voidFile.src}
-      alt={channel?.title}
+      src="https://yangmao8.com/imgs/yangmao8.png"
+      alt="羊毛吧 全网羊毛一起薅"
       loading="eager"
       class="header-avatar"
     />
   </a>
   <div class="header-title">
-    <a href={SITE_URL} class="site-title" title={channel?.title}>
-      {channel?.title}
+    <a href={SITE_URL} class="site-title" title="羊毛吧 全网羊毛一起薅">
+      羊毛吧 全网羊毛一起薅
     </a>
   </div>
   <div class="header-icons">

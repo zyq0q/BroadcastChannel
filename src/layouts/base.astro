@@ -19,20 +19,20 @@ const { origin, pathname } = new URL(canonical)
 const twitter = getEnv(import.meta.env, Astro, 'TWITTER')
 
 const seoParams = {
-  title: seo?.title,
-  description: seo?.text ?? channel?.description,
+  title: "羊毛吧 全网羊毛一起薅",
+  description: "羊毛吧，全网羊毛一起薅，优惠促销打折海淘BUG价活动线报，各大支付APP支付活动折扣及时推送，京东、苏宁、淘宝、天猫、国美，你能想到的这里都有！",
   canonical,
   noindex: seo?.noindex ?? getEnv(import.meta.env, Astro, 'NOINDEX'),
   nofollow: seo?.nofollow ?? getEnv(import.meta.env, Astro, 'NOFOLLOW'),
   openGraph: {
     basic: {
       type: 'website',
-      title: channel?.title ?? '',
+      title: "羊毛吧 全网羊毛一起薅",
       url: canonical,
-      image: channel?.avatar ? channel.avatar : origin + '/favicon.ico',
+      image: "https://yangmao8.com/imgs/yangmao8.png",
     },
     optional: {
-      description: seo?.text ?? channel?.description,
+      description: "羊毛吧，全网羊毛一起薅，优惠促销打折海淘BUG价活动线报，各大支付APP支付活动折扣及时推送，京东、苏宁、淘宝、天猫、国美，你能想到的这里都有！",
       locale,
     },
   },
@@ -40,9 +40,7 @@ const seoParams = {
     link: [
       {
         rel: 'icon',
-        href: channel?.avatar
-          ? `https://wsrv.nl/?w=64&h=64&fit=cover&mask=circle&url=ssl:${channel?.avatar?.replace(/^https?:\/\//, '')}`
-          : '/favicon.svg',
+        href: "https://yangmao8.com/imgs/yangmao8.png",
       },
     ],
   },
@@ -68,20 +66,22 @@ const navs = (getEnv(import.meta.env, Astro, 'NAVS') || '')
 ---
 
 <!doctype html>
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id:"Kfrvk2bLMVBi31ga",ck:"Kfrvk2bLMVBi31ga"})</script>
 <html lang={locale ?? 'en'}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#f4f1ec" />
-    <link rel="alternate" type="application/rss+xml" title={`${RSS_PREFIX}${channel?.title}`} href={RSS_URL} />
+    <link rel="alternate" type="application/rss+xml" title="羊毛吧 全网羊毛一起薅" href={RSS_URL} />
     <style is:inline>
       @view-transition {
         navigation: auto; /* enabled */
       }
     </style>
     <SEO
-      titleTemplate={`%s | ${channel?.title}`}
-      titleDefault={[channel?.title, seoParams.description].filter(Boolean).join(' - ')}
+      titleTemplate={`%s | "羊毛吧 全网羊毛一起薅"`}
+      titleDefault={["羊毛吧 全网羊毛一起薅", seoParams.description].filter(Boolean).join(' - ')}
       twitter={{
         card: 'summary_large_image',
         creator: twitter ? `@${twitter}` : undefined,
@@ -101,7 +101,7 @@ const navs = (getEnv(import.meta.env, Astro, 'NAVS') || '')
           <slot name="aside">
             <div class="nav">
               <div class="nav-item">
-                <a href={SITE_URL} title={channel?.title} class={`nav-link ${pathname === '/' ? 'current' : ''}`}>
+                <a href={SITE_URL} title="羊毛吧 全网羊毛一起薅" class={`nav-link ${pathname === '/' ? 'current' : ''}`}>
                   首页
                 </a>
               </div>
